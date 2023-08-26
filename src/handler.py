@@ -160,10 +160,14 @@ def queue_prompt(prompt):
     req =  request.Request("http://127.0.0.1:3000/prompt", data=data)
     request.urlopen(req)
 
+def get_history(prompt_id):
+    req =  request.Get("http://127.0.0.1:3000/history/{}".format(prompt_id))
+    request.urlopen(req)
+
 def handler(event):
     print(event)
     # queue_prompt(event)
-
+    
     # do the things
 
     # return the output that you want to be returned like pre-signed URLs to output artifacts
