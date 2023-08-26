@@ -166,18 +166,17 @@ def get_history(prompt_id):
 
 def handler(event):
     print(event)
+    # prompt = json.loads(prompt_text)
+    # #set the text prompt for our positive CLIPTextEncode
+    # prompt["6"]["inputs"]["text"] = "masterpiece best quality man"
+    
+    # #set the seed for our KSampler node
+    # prompt["3"]["inputs"]["seed"] = 5
     # queue_prompt(event)
     
     # do the things
 
     # return the output that you want to be returned like pre-signed URLs to output artifacts
     return "Hello World"
-
-prompt = json.loads(prompt_text)
-#set the text prompt for our positive CLIPTextEncode
-prompt["6"]["inputs"]["text"] = "masterpiece best quality man"
-
-#set the seed for our KSampler node
-prompt["3"]["inputs"]["seed"] = 5
 
 runpod.serverless.start({"handler": handler})
