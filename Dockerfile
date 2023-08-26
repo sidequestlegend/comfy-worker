@@ -94,7 +94,7 @@ COPY --from=proxy readme.html /usr/share/nginx/html/readme.html
 COPY README.md /usr/share/nginx/html/README.md
 
 # Start Scripts
-COPY pre_start.sh /pre_start.sh
+COPY src/pre_start.sh /pre_start.sh
 COPY src/handler.py /handler.py
 COPY --from=scripts start.sh /
 RUN chmod +x /start.sh
